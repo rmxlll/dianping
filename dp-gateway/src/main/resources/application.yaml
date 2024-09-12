@@ -1,0 +1,66 @@
+server:
+  port: 8080
+feign:
+  okhttp:
+    enabled: true # 开启OKHttp连接池支持
+spring:
+  main:
+    web-application-type: reactive
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true   #开启了会自动匹配路由规则
+      routes:
+        - id: dp-user # 路由规则id，自定义，唯一
+          uri: lb://dp-user # 路由的目标服务，lb代表负载均衡，会从注册中心拉取服务列表
+          predicates: # 路由断言，判断当前请求是否符合当前规则，符合则路由到目标服务
+            - Path=/user/** # 这里是以请求路径作为判断规则
+        - id: dp-shop
+          uri: lb://dp-shop
+          predicates:
+            - Path=/shop/**,/shop-type/**
+        - id: dp-follow
+          uri: lb://dp-follow
+          predicates:
+            - Path=/follow/**
+        - id: dp-blog
+          uri: lb://dp-blog
+          predicates:
+            - Path=/comment/**,/blog/**
+        - id: dp-voucher
+          uri: lb://dp-voucher
+          predicates:
+            - Path=/voucher/**,/voucher-order/**
+  elasticsearch:
+    rest:
+      uris:
+        - http://localhost:9200
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: com.dianping.user.domain.po # 别名扫描包
+  type-handlers-package: com.hmdp.config.BooleanCharTypeHandler
+logging:
+  level:
+    com.dianping: debug
+    org.springframework.cloud.gateway: TRACE
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: "logs/${spring.application.name}"
+files:
+  upload:
+    path: icons\
+dp:
+  auth:
+    exclude-paths:
+      - /user/login
+      - /user/code
+      - /shop-type/list
+      - /shop/**
+      - /voucher/**
+      - /upload/**
+      - /map/**
+      - /file/**
+      - /comment/**
