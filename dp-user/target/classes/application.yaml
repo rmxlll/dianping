@@ -1,0 +1,26 @@
+server:
+  port: 8083
+feign:
+  okhttp:
+    enabled: true # 开启OKHttp连接池支持
+spring:
+  elasticsearch:
+    rest:
+      uris:
+        - http://localhost:9200
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: com.dianping.user.domain.po # 别名扫描包
+  type-handlers-package: com.hmdp.config.BooleanCharTypeHandler
+logging:
+  level:
+    com.dianping.user: trace
+  pattern:
+    dateformat: HH:mm:ss:SSS
+  file:
+    path: "logs/${spring.application.name}"
+files:
+  upload:
+    path: icons\
+

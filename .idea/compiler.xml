@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dp-user" />
+        <module name="dp-voucher" />
+        <module name="dp-blog" />
+        <module name="dp-follow" />
+        <module name="dp-shop" />
+        <module name="dp-common" />
+        <module name="dp-gateway" />
+        <module name="dp-api" />
+      </profile>
+    </annotationProcessing>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="dianping" options="" />
+      <module name="dp-api" options="-parameters" />
+      <module name="dp-blog" options="-parameters" />
+      <module name="dp-common" options="-parameters" />
+      <module name="dp-follow" options="-parameters" />
+      <module name="dp-gateway" options="-parameters" />
+      <module name="dp-shop" options="-parameters" />
+      <module name="dp-user" options="-parameters" />
+      <module name="dp-voucher" options="-parameters" />
+    </option>
+  </component>
+</project>

@@ -1,0 +1,9 @@
+E:\dianping\dp-common\src\main\java\com\dianping\common\UserDTO.java
+E:\dianping\dp-common\src\main\java\com\dianping\common\utils\SystemConstants.java
+E:\dianping\dp-common\src\main\java\com\dianping\common\interceptor\UserInfoInterceptor.java
+E:\dianping\dp-common\src\main\java\com\dianping\common\utils\UserHolder.java
+E:\dianping\dp-common\src\main\java\com\dianping\common\config\MvcConfig.java
+E:\dianping\dp-common\src\main\java\com\dianping\common\utils\Result.java
+E:\dianping\dp-common\src\main\java\com\dianping\common\config\RedissonConfig.java
+E:\dianping\dp-common\src\main\java\com\dianping\common\utils\RedisConstants.java
+E:\dianping\dp-common\src\main\java\com\dianping\common\config\BooleanCharTypeHandler.java
